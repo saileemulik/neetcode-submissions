@@ -1,0 +1,2 @@
+-- Write your query below
+Select seller_name from seller where seller_id not in(Select o.seller_id from orders o inner join customer c on c.customer_id = o.customer_id where  EXTRACT(YEAR FROM o.sale_date) = 2020) order by seller_name;
